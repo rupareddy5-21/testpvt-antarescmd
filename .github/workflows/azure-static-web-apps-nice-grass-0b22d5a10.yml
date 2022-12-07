@@ -8,6 +8,7 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+      - new
 
 jobs:
   build_and_deploy_job:
@@ -31,7 +32,7 @@ jobs:
           api_location: "/api" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           verbose: true
-          deployment_environment: "new-test"
+          production_branch: "main"
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
